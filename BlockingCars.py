@@ -1,37 +1,30 @@
-class BlockingCars:
+class BlockingCars(object):
 
-    def small_blocking_cars(self):
-        width = 1
-        length = 1
-        cars = [width, length]
+    def __init__(self, length, width, coord, direction):
+        self.coord = coord
+        self.length = length - 1
+        self.width = width - 1
+        self.direction = direction
 
-    def big_blocking_cars(self):
-        width = 1
-        length = 2
-        cars = [width, length]
+    def move(self, direction, distance):
+        if direction == 'up':
+            self.coord['y'] -= distance
 
-    def movement_blocking_cars(self, Direction):
-        if Direction == "up":
-            if self.row > 0:
-                if self.CollisionCheck("up") == False:
-                    self.column -= 1
+        if direction == 'down':
+            self.coord['y'] += distance
 
-        elif Direction == "DOWN":
-            if self.Row < MapSize - 1:
-                if self.CollisionCheck("DOWN") == False:
-                    self.Row += 1
+        if direction == 'left':
+            self.coord['x'] -= distance
 
-        Map.update()
+        if direction == 'right':
+            self.coord['x'] += distance
 
-    def Location(self):
-        print("Coordinates: " + str(self.Column) + ", " + str(self.Row))
-
-    def CollisionCheck(self,
-                       Direction):  # Checks if anything is on top of the grass in the direction that the character wants to move. Used in the move function
-        if Direction == "UP":
-            if len(Map.Grid[self.Column][(self.Row) - 1]) > 1:
-                return True
-        elif Direction == "DOWN":
-            if len(Map.Grid[self.Column][(self.Row) + 1]) > 1:
-                return True
-        return False
+    def __repr__(self):
+        if self.orientation == Orientation.HORIZONTAL:
+            other_coord = {'x': self.coord['x'] + self.length,
+                           'y': self.coord['y']}
+            return "{} [{},{}]".format(self.name, self.coord, other_coord)
+        else:
+            other_coord = {'x': self.coord[
+                'x'], 'y': self.coord['y'] + self.length}
+            return "{} [{},{}]".format(self.name, self.coord, other_coord)
