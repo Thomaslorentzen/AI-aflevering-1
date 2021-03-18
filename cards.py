@@ -1,20 +1,8 @@
-from numpy.core import number
-
-discard_pile = []
-
-cards = []
-
-
-def main():
-    shift_grid()
-
-
-def move():
-    pass
+import HeroCars
+import BlockingCars
 
 
 def shift_grid():
-
     while True:
         grid = input("Do you want to shift {L}eft, {R}ight or {M}iddle grid? (x to exit) ")
         if grid.upper() == "L":
@@ -57,5 +45,23 @@ def shift_grid():
             print("Invalid input! Try again!")
 
 
-if __name__ == '__main__':
-    main()
+class Cards:
+    discard_pile = []
+
+    cards = []
+
+    def __init__(self):
+        self.cards = []
+        self.discard_pile = []
+
+    def main(self):
+        shift_grid()
+
+    def look_at_deck(self):
+        pass
+
+    def move(self):
+        pass
+
+    if __name__ == '__main__':
+        main()
