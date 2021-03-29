@@ -112,11 +112,8 @@ class Board:
             random_y = random.randrange(self.Grid1_y_start, self.Grid3_y_end)
             direction = ""
             is_occupied = self.Board[random_x][random_y][0] == ""
-            # print("value: {}".format(is_occupied))
-            # print("{}".format(self.cars_to_place))
-            # print("{} and {} are our coordinates".format(random_x, random_y))
             if self.Board[random_x][random_y][0] == "":
-                print("Du er i if statement chap, med " + str(self.car_ctr) + " biler at skulle placere din nar")
+                print("Du er i if statement c, med " + str(self.car_ctr) + " biler at skulle placere")
                 print("{} and {} are our coordinates".format(random_x, random_y))
                 # car = Car("c" + str(self.cars_to_place), random_x, random_y, direction)
                 if random.randrange(0, 2) == 0:
@@ -152,26 +149,19 @@ class Board:
             if Board.car_list[self.car].direction == "vertical":
                 if self.driving_direction == "up":
                     test_i_board = Board.car_list[self.car].Y_coord - movement_num < 5
-                    print("Y-koordinat - movement_num er mindre end fem: {}".format(test_i_board))
 
                     if not Board.car_list[self.car].Y_coord - movement_num < 5:
                         test = \
                         self.Board[Board.car_list[self.car].Y_coord - movement_num][Board.car_list[self.car].X_coord][
                             0] == ""
-                        print("koordinaterne er {}, {}".format(Board.car_list[self.car].X_coord,
-                                                               Board.car_list[self.car].Y_coord))
-                        print("Der er ikke nogen bil her: {}".format(test))
-
                         if self.Board[Board.car_list[self.car].Y_coord
                                       - movement_num][Board.car_list[self.car].X_coord][0] == "":
-                            print("Du er helt inde nu!")
                             #       breakpoint()
                             self.Board[Board.car_list[self.car].Y_coord][Board.car_list[self.car].X_coord][0] = ""
                             self.Board[Board.car_list[self.car].Y_coord
                                        - movement_num][Board.car_list[self.car].X_coord][0] = Board.car_list[
                                 self.car].id
                             Board.car_list[self.car].Y_coord = Board.car_list[self.car].Y_coord - movement_num
-                            print("Vi er i else statement nu!")
                         #        breakpoint()
 
                         else:
@@ -183,7 +173,6 @@ class Board:
             if Board.car_list[self.car].direction == "vertical":
                 if self.driving_direction == "down":
                     test_i_board = Board.car_list[self.car].Y_coord + int(movement_num) > 10
-                    print("Y-koordinat - movement_num er mindre end fem: {}".format(test_i_board))
 
                     if not Board.car_list[self.car].Y_coord + int(movement_num) > 10:
                         test = \
@@ -196,14 +185,12 @@ class Board:
 
                         if self.Board[Board.car_list[self.car].Y_coord
                                       + int(movement_num)][Board.car_list[self.car].X_coord][0] == "":
-                            print("Du er helt inde nu!")
                             #       breakpoint()
                             self.Board[Board.car_list[self.car].Y_coord][Board.car_list[self.car].X_coord][0] = ""
                             self.Board[Board.car_list[self.car].Y_coord
                                        + int(movement_num)][Board.car_list[self.car].X_coord][0] = Board.car_list[
                                 self.car].id
                             Board.car_list[self.car].Y_coord = Board.car_list[self.car].Y_coord + int(movement_num)
-                            print("Vi er i else statement nu!")
                         #        breakpoint()
 
                         else:
@@ -227,14 +214,12 @@ class Board:
 
                         if self.Board[Board.car_list[self.car].Y_coord][Board.car_list[self.car].X_coord
                                                                         - int(movement_num)][0] == "":
-                            print("Du er helt inde nu!")
                             #       breakpoint()
                             self.Board[Board.car_list[self.car].Y_coord][Board.car_list[self.car].X_coord][0] = ""
                             self.Board[Board.car_list[self.car].Y_coord][Board.car_list[self.car].X_coord
                                                                          - int(movement_num)][0] = Board.car_list[
                                 self.car].id
                             Board.car_list[self.car].X_coord = Board.car_list[self.car].X_coord - int(movement_num)
-                            print("Vi er i else statement nu!")
                         #        breakpoint()
 
                         else:
@@ -258,14 +243,12 @@ class Board:
 
                         if self.Board[Board.car_list[self.car].Y_coord][Board.car_list[self.car].X_coord
                                                                         + int(movement_num)][0] == "":
-                            print("Du er helt inde nu!")
                             #       breakpoint()
                             self.Board[Board.car_list[self.car].Y_coord][Board.car_list[self.car].X_coord][0] = ""
                             self.Board[Board.car_list[self.car].Y_coord][Board.car_list[self.car].X_coord
                                                                          + int(movement_num)][0] = Board.car_list[
                                 self.car].id
                             Board.car_list[self.car].X_coord = Board.car_list[self.car].X_coord + int(movement_num)
-                            print("Vi er i else statement nu!")
                         #        breakpoint()
 
                         else:
@@ -282,7 +265,7 @@ class Board:
 
 
     def get_p1_pos(self):
-        print("Morten strikker :D")
+        pass
 
     def get_p2_pos(self):
         pass
