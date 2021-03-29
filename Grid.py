@@ -116,7 +116,6 @@ class Board:
             # print("{}".format(self.cars_to_place))
             # print("{} and {} are our coordinates".format(random_x, random_y))
             if self.Board[random_x][random_y][0] == "":
-                print("Du er i if statement chap, med " + str(self.car_ctr) + " biler at skulle placere din nar")
                 print("{} and {} are our coordinates".format(random_x, random_y))
                 # car = Car("c" + str(self.cars_to_place), random_x, random_y, direction)
                 if random.randrange(0, 2) == 0:
@@ -164,20 +163,20 @@ class Board:
 
                         if self.Board[Board.car_list[self.car].Y_coord
                                       - movement_num][Board.car_list[self.car].X_coord][0] == "":
-                            print("Du er helt inde nu!")
+                            #print("Du er helt inde nu!")
                             #       breakpoint()
                             self.Board[Board.car_list[self.car].Y_coord][Board.car_list[self.car].X_coord][0] = ""
                             self.Board[Board.car_list[self.car].Y_coord
                                        - movement_num][Board.car_list[self.car].X_coord][0] = Board.car_list[
                                 self.car].id
                             Board.car_list[self.car].Y_coord = Board.car_list[self.car].Y_coord - movement_num
-                            print("Vi er i else statement nu!")
+                            #print("Vi er i else statement nu!")
                         #        breakpoint()
 
                         else:
                             print("Failed to move cars")
 
-        # DONE :D
+        # DONE 
         if self.car in Board.car_list.keys():
 
             if Board.car_list[self.car].direction == "vertical":
@@ -196,14 +195,14 @@ class Board:
 
                         if self.Board[Board.car_list[self.car].Y_coord
                                       + int(movement_num)][Board.car_list[self.car].X_coord][0] == "":
-                            print("Du er helt inde nu!")
+                            #print("Du er helt inde nu!")
                             #       breakpoint()
                             self.Board[Board.car_list[self.car].Y_coord][Board.car_list[self.car].X_coord][0] = ""
                             self.Board[Board.car_list[self.car].Y_coord
                                        + int(movement_num)][Board.car_list[self.car].X_coord][0] = Board.car_list[
                                 self.car].id
                             Board.car_list[self.car].Y_coord = Board.car_list[self.car].Y_coord + int(movement_num)
-                            print("Vi er i else statement nu!")
+                            #print("Vi er i else statement nu!")
                         #        breakpoint()
 
                         else:
@@ -227,14 +226,14 @@ class Board:
 
                         if self.Board[Board.car_list[self.car].Y_coord][Board.car_list[self.car].X_coord
                                                                         - int(movement_num)][0] == "":
-                            print("Du er helt inde nu!")
+                            #print("Du er helt inde nu!")
                             #       breakpoint()
                             self.Board[Board.car_list[self.car].Y_coord][Board.car_list[self.car].X_coord][0] = ""
                             self.Board[Board.car_list[self.car].Y_coord][Board.car_list[self.car].X_coord
                                                                          - int(movement_num)][0] = Board.car_list[
                                 self.car].id
                             Board.car_list[self.car].X_coord = Board.car_list[self.car].X_coord - int(movement_num)
-                            print("Vi er i else statement nu!")
+                            #print("Vi er i else statement nu!")
                         #        breakpoint()
 
                         else:
@@ -258,7 +257,7 @@ class Board:
 
                         if self.Board[Board.car_list[self.car].Y_coord][Board.car_list[self.car].X_coord
                                                                         + int(movement_num)][0] == "":
-                            print("Du er helt inde nu!")
+                            #print("Du er helt inde nu!")
                             #       breakpoint()
                             self.Board[Board.car_list[self.car].Y_coord][Board.car_list[self.car].X_coord][0] = ""
                             self.Board[Board.car_list[self.car].Y_coord][Board.car_list[self.car].X_coord
